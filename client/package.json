@@ -1,0 +1,25 @@
+{
+  "name": "mintai-client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "consume": "tsx src/consumer.ts",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@scure/base": "^2.0.0",
+    "@solana/kit": "^5.5.1",
+    "@x402/core": "^2.8.0",
+    "@x402/evm": "^2.8.0",
+    "@x402/fetch": "^2.8.0",
+    "@x402/svm": "^2.8.0",
+    "dotenv": "^16.4.5",
+    "viem": "^2.47.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "tsx": "^4.21.0",
+    "typescript": "^5.4.5"
+  }
+}
