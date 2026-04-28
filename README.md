@@ -1,4 +1,4 @@
-# Mint AI — Self-Sustaining AI Agents with x402 Payments & Filecoin Memory
+# Mint AI - Self-Sustaining AI Agents with x402 Payments & Filecoin Memory
 
 > AI agents that earn micropayments autonomously, persist their memory on decentralized storage, and maintain verifiable on-chain identity.
 
@@ -10,7 +10,7 @@ This repo is a fresh build of the Mint AI concept with a redesigned smart contra
 
 ```
 MintAI/
-├── contracts/        Hardhat — MintAIRegistry.sol (FEVM Calibration)
+├── contracts/        Hardhat - MintAIRegistry.sol (FEVM Calibration)
 ├── server/           Express + x402 + Anthropic + Lighthouse + ethers
 ├── client/           x402 consumer demo (Solana Devnet payer)
 └── dashboard/        Next.js 14 + shadcn/ui + Tailwind 3.4
@@ -46,15 +46,15 @@ graph TD
 
 ---
 
-## Smart Contract — `MintAIRegistry`
+## Smart Contract - `MintAIRegistry`
 
 **Network:** Filecoin FEVM Calibration (Chain ID 314159)
 
 Three deliberate design choices:
 
-1. **Append-only memory history** — every flush adds a `MemoryAnchor` to a per-agent array (`cid`, `timestamp`, `entryCount`). No overwrites, full audit trail on chain.
-2. **Per-service breakdown** — `ServiceStats` tracks `analyze` / `generate` / `predict` requests and earnings separately, in micro-USD (uint64).
-3. **Role-based access** — `admin` + `earningsRecorders` mapping; agents self-anchor their memory; only recorders write earnings.
+1. **Append-only memory history** - every flush adds a `MemoryAnchor` to a per-agent array (`cid`, `timestamp`, `entryCount`). No overwrites, full audit trail on chain.
+2. **Per-service breakdown** - `ServiceStats` tracks `analyze` / `generate` / `predict` requests and earnings separately, in micro-USD (uint64).
+3. **Role-based access** - `admin` + `earningsRecorders` mapping; agents self-anchor their memory; only recorders write earnings.
 
 ```solidity
 struct Agent      { address wallet; string name; uint64 registeredAt; bool active; }
@@ -68,11 +68,11 @@ struct ServiceStats {
 
 Key functions: `registerAgent`, `anchorMemory`, `recordService`, `setReputation`, `grantRecorder`, `getMemoryHistory`, `getAllAgents`.
 
-Tested with Hardhat — 8 unit tests covering registration, double-registration, anchor history, per-service stats, recorder access control, reputation cap, and unregistered-agent guards.
+Tested with Hardhat - 8 unit tests covering registration, double-registration, anchor history, per-service stats, recorder access control, reputation cap, and unregistered-agent guards.
 
 ---
 
-## Server — `server/`
+## Server - `server/`
 
 Express + TypeScript. Routes:
 
@@ -99,7 +99,7 @@ After each paid call, the server:
 
 ---
 
-## Client — `client/`
+## Client - `client/`
 
 x402 consumer demo. Uses `@x402/fetch` + `@x402/svm` + `@solana/kit` to sign payments transparently:
 
@@ -112,7 +112,7 @@ export const fetchWithPayment = wrapFetchWithPayment(fetch, client);
 
 ---
 
-## Dashboard — `dashboard/`
+## Dashboard - `dashboard/`
 
 **Stack:** Next.js 14, React 18, Tailwind 3.4, shadcn/ui (new-york style, slate base), Chart.js, Sonner, lucide-react.
 
@@ -128,13 +128,13 @@ export const fetchWithPayment = wrapFetchWithPayment(fetch, client);
 
 ### WCAG 2.1 AA features
 
-- **1.4.3 Contrast** — design tokens deliberately tuned (`foreground` 16.8:1, `muted-foreground` 6.6:1, `border` 3.2:1).
-- **2.1.1 Keyboard / 2.4.7 Focus visible** — all interactions reachable via Tab; 2px focus ring with offset on every focusable element via shadcn primitives.
-- **2.4.1 Bypass blocks** — "Skip to main content" link, first child of `<body>`, becomes visible on focus.
-- **4.1.2 Name/Role/Value** — semantic landmarks (`<header>`, `<nav>`, `<aside>`, `<main>`); aria labels on icon-only buttons; ARIA-current on active nav links.
-- **1.3.1 Info & relationships** — tables use `<th scope="col">` and `<caption class="sr-only">`; one `<h1>` per page; logical heading descent.
-- **1.4.10 Reflow** — works at 320px width via mobile dropdown nav.
-- **3.3.2 Labels** — `<Label htmlFor>` ↔ `<Textarea id>` pairs throughout the playground.
+- **1.4.3 Contrast** - design tokens deliberately tuned (`foreground` 16.8:1, `muted-foreground` 6.6:1, `border` 3.2:1).
+- **2.1.1 Keyboard / 2.4.7 Focus visible** - all interactions reachable via Tab; 2px focus ring with offset on every focusable element via shadcn primitives.
+- **2.4.1 Bypass blocks** - "Skip to main content" link, first child of `<body>`, becomes visible on focus.
+- **4.1.2 Name/Role/Value** - semantic landmarks (`<header>`, `<nav>`, `<aside>`, `<main>`); aria labels on icon-only buttons; ARIA-current on active nav links.
+- **1.3.1 Info & relationships** - tables use `<th scope="col">` and `<caption class="sr-only">`; one `<h1>` per page; logical heading descent.
+- **1.4.10 Reflow** - works at 320px width via mobile dropdown nav.
+- **3.3.2 Labels** - `<Label htmlFor>` ↔ `<Textarea id>` pairs throughout the playground.
 
 ---
 
