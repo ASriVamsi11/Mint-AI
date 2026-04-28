@@ -88,7 +88,7 @@ router.post("/chat", async (req: Request, res: Response) => {
       });
       activityLog.push(
         "earning",
-        `Earned $${priceUsd.toFixed(3)} — /api/playground/chat (${kind})`,
+        `Earned $${priceUsd.toFixed(3)} - /api/playground/chat (${kind})`,
         `"${message.slice(0, 80)}"`,
       );
 

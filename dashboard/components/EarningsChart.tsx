@@ -18,7 +18,7 @@ import type { ActivityEvent } from "@/lib/types";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
 function parseEarning(detail: string, title: string): number {
-  // title format: "Earned $0.010 — /api/analyze"
+  // title format: "Earned $0.010 - /api/analyze"
   const match = title.match(/\$([0-9]+\.[0-9]+)/);
   if (match) return parseFloat(match[1]);
   void detail;
@@ -92,7 +92,7 @@ export function EarningsChart({ events }: { events: ActivityEvent[] }) {
   if (earnings.length === 0) {
     return (
       <div className="flex h-full min-h-[240px] items-center justify-center text-sm text-muted-foreground">
-        No earnings recorded yet — call a paid endpoint to populate this chart.
+        No earnings recorded yet - call a paid endpoint to populate this chart.
       </div>
     );
   }

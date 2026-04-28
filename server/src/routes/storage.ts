@@ -6,7 +6,7 @@ import { config } from "../config.js";
 
 const router = Router();
 
-// GET /api/storage/memories — list all memory batches (in-memory state)
+// GET /api/storage/memories - list all memory batches (in-memory state)
 router.get("/memories", async (_req: Request, res: Response) => {
   const batches = agentMemory.getBatches();
   let onChain: Awaited<ReturnType<typeof readMemoryHistory>> | null = null;
@@ -27,7 +27,7 @@ router.get("/memories", async (_req: Request, res: Response) => {
   });
 });
 
-// GET /api/storage/memory/:cid — retrieve a specific memory batch from Filecoin gateway
+// GET /api/storage/memory/:cid - retrieve a specific memory batch from Filecoin gateway
 router.get("/memory/:cid", async (req: Request, res: Response) => {
   try {
     const data = await fetchFromFilecoin(req.params.cid);
@@ -37,7 +37,7 @@ router.get("/memory/:cid", async (req: Request, res: Response) => {
   }
 });
 
-// POST /api/storage/flush — manual flush trigger
+// POST /api/storage/flush - manual flush trigger
 router.post("/flush", async (_req: Request, res: Response) => {
   try {
     const batch = await agentMemory.flush();

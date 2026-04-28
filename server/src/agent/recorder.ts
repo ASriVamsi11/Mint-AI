@@ -24,7 +24,7 @@ export async function recordPaidRequest(
   agentMemory.add({ serviceKind: kind, query, response });
   activityLog.push(
     "earning",
-    `Earned $${priceUsd.toFixed(3)} — /api/${kind}`,
+    `Earned $${priceUsd.toFixed(3)} - /api/${kind}`,
     `"${query.slice(0, 80)}"`,
   );
 
@@ -32,7 +32,7 @@ export async function recordPaidRequest(
     try {
       const agentAddr = getAgentAddress();
       const microUsd = Math.round(priceUsd * 1_000_000);
-      // Fire-and-forget — don't block the HTTP response on FEVM tx confirmation
+      // Fire-and-forget - don't block the HTTP response on FEVM tx confirmation
       recordServiceOnChain(agentAddr, SERVICE_KIND_INDEX[kind], microUsd).catch((err) =>
         console.warn(`[Recorder] recordService(${kind}) failed:`, err.message ?? err),
       );

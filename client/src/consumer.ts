@@ -56,7 +56,7 @@ async function main() {
   );
 
   console.log("\n════════════════════════════════════════════════════════");
-  console.log(`  Summary — total spent: $${totalSpend.toFixed(3)} USDC`);
+  console.log(`  Summary - total spent: $${totalSpend.toFixed(3)} USDC`);
   console.log(`  Settlement: Solana Devnet via x402 facilitator`);
   console.log("════════════════════════════════════════════════════════");
 }

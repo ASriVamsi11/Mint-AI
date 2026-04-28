@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /*
-  WCAG 2.1 AA design tokens — every text/background pair targets ≥4.5:1
+  WCAG 2.1 AA design tokens - every text/background pair targets ≥4.5:1
   and every UI-component pair (border, focus ring) ≥3:1. Token math:
     foreground (210 40% 98%, ~#F8FAFC) on background (222 47% 7%, ~#0B1220)  ≈ 16.8:1
     muted-foreground (215 22% 70%) on background  ≈ 6.6:1
@@ -78,7 +78,7 @@
     font-feature-settings: "cv11", "ss01";
   }
 
-  /* WCAG 2.4.7 Focus Visible — visible 2px ring on every focusable element */
+  /* WCAG 2.4.7 Focus Visible - visible 2px ring on every focusable element */
   :focus-visible {
     @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
   }
@@ -88,7 +88,7 @@
     font-variant-numeric: tabular-nums;
   }
 
-  /* WCAG 2.4.1 Skip link — visible only when focused */
+  /* WCAG 2.4.1 Skip link - visible only when focused */
   .skip-link {
     @apply absolute left-2 top-2 -translate-y-20 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-transform focus-visible:translate-y-0;
     z-index: 100;

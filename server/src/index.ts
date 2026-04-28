@@ -22,14 +22,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// x402 resource server — wires Solana payment scheme to the facilitator
+// x402 resource server - wires Solana payment scheme to the facilitator
 const facilitator = new HTTPFacilitatorClient({ url: config.FACILITATOR_URL });
 const resourceServer = new x402ResourceServer(facilitator).register(
   SOLANA_NETWORK,
   new ExactSvmScheme(),
 );
 
-// Payment middleware — gates the three paid endpoints
+// Payment middleware - gates the three paid endpoints
 app.use(
   paymentMiddleware(
     {
@@ -42,7 +42,7 @@ app.use(
             payTo: config.SVM_ADDRESS,
           },
         ],
-        description: "MintAI — data analysis",
+        description: "MintAI - data analysis",
         mimeType: "application/json",
       },
       "GET /api/generate": {
@@ -54,7 +54,7 @@ app.use(
             payTo: config.SVM_ADDRESS,
           },
         ],
-        description: "MintAI — content generation",
+        description: "MintAI - content generation",
         mimeType: "application/json",
       },
       "GET /api/predict": {
@@ -66,7 +66,7 @@ app.use(
             payTo: config.SVM_ADDRESS,
           },
         ],
-        description: "MintAI — market prediction",
+        description: "MintAI - market prediction",
         mimeType: "application/json",
       },
     },

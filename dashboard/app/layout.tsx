@@ -19,7 +19,7 @@ const jbm = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mint AI — Autonomous Agent Console",
+  title: "Mint AI - Autonomous Agent Console",
   description:
     "Self-sustaining AI agents earning x402 micropayments on Solana with on-chain memory anchored to Filecoin.",
 };

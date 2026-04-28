@@ -21,7 +21,7 @@ export default function OverviewPage() {
       <header>
         <h1 className="text-2xl font-semibold tracking-tight">Overview</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Live agent metrics — earnings, memory, and on-chain identity at a glance.
+          Live agent metrics - earnings, memory, and on-chain identity at a glance.
         </p>
       </header>
 

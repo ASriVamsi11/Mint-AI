@@ -36,7 +36,7 @@ export default function ActivityPage() {
       <header>
         <h1 className="text-2xl font-semibold tracking-tight">Activity</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Live event feed — paid requests, memory flushes, and on-chain operations.
+          Live event feed - paid requests, memory flushes, and on-chain operations.
         </p>
       </header>
 

@@ -12,8 +12,8 @@ export async function boot(): Promise<void> {
   console.log("[Boot] MintAI agent boot sequence starting...");
 
   if (!isFevmConfigured()) {
-    console.warn("[Boot] FEVM not configured — running in off-chain mode");
-    activityLog.push("system", "Agent booted (off-chain)", "FEVM credentials missing — on-chain features disabled");
+    console.warn("[Boot] FEVM not configured - running in off-chain mode");
+    activityLog.push("system", "Agent booted (off-chain)", "FEVM credentials missing - on-chain features disabled");
     return;
   }
 

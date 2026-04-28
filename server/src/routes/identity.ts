@@ -4,7 +4,7 @@ import { config } from "../config.js";
 
 const router = Router();
 
-// GET /api/identity — agent's on-chain identity, per-service stats, reputation
+// GET /api/identity - agent's on-chain identity, per-service stats, reputation
 router.get("/", async (_req: Request, res: Response) => {
   if (!isFevmConfigured()) {
     res.json({

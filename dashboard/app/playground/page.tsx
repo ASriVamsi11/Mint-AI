@@ -106,7 +106,7 @@ export default function PlaygroundPage() {
       <header>
         <h1 className="text-2xl font-semibold tracking-tight">Playground</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Free demo mode — calls bypass x402 but still record earnings, update memory, and emit
+          Free demo mode - calls bypass x402 but still record earnings, update memory, and emit
           activity events.
         </p>
       </header>
